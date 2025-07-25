@@ -1,113 +1,74 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>TrikNova Web Agency</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <title>Bienvenido | Tu Agencia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Paleta vintage‑futurista */
-    :root {
-      --cream: #f4eee0;
-      --sepia: #6b533a;
-      --turquoise-fut: #40e0d0;
-      --text: #1f1b18;
-      --accent: #d64161;
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: 'Courier New', monospace;
+      background: black;
+      color: white;
     }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Segoe UI',sans-serif;color:var(--text);background:var(--cream);}
-    header{padding:20px;text-align:center;border-bottom:3px solid var(--sepia);}
-    header h1{font-size:2.8rem;color:var(--sepia);letter-spacing:2px;font-family: 'Courier New', monospace;}
-    nav{margin-top:10px;}
-    nav a{margin:0 15px;color:var(--sepia);text-decoration:none;font-weight:bold;transition:color .3s;}
-    nav a:hover{color:var(--accent);}
-    .hero{padding:60px 20px;text-align:center;background:linear-gradient(130deg, var(--sepia), var(--turquoise-fut));color:var(--cream);}
-    .hero h2{font-size:2.5rem; font-family: 'Courier New', monospace; margin-bottom:15px;}
-    .hero p{max-width:600px;margin:auto;font-size:1.1rem;line-height:1.5;}
-    .btn{display:inline-block;margin-top:30px;padding:12px 30px;border:2px solid var(--cream);color:var(--cream);text-decoration:none;font-size:1rem;border-radius:25px;transition:background .3s,color .3s;}
-    .btn:hover{background:var(--cream);color:var(--turquoise-fut);}
-    section{padding:60px 20px;}
-    h2.section-title{font-size:2rem;color:var(--sepia);margin-bottom:40px;text-align:center;font-family: sans-serif;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;}
-    .card{background:rgba(255,255,255,0.8);padding:30px;border-radius:10px;transition:transform .3s;}
-    .card:hover{transform:translateY(-8px);}
-    .card-icon{font-size:2.3rem;color:var(--turquoise-fut);margin-bottom:15px;}
-    .portfolio{background:var(--cream);}
-    .portfolio img{width:100%;border:4px solid var(--sepia);border-radius:8px;transition:transform .3s;}
-    .portfolio img:hover{transform:scale(1.05);}
-    .contact form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;}
-    input,textarea{padding:12px;border:1px solid var(--sepia);border-radius:4px;background:#fff;color:var(--text);}
-    button{padding:14px;background:var(--accent);color:#fff;border:none;border-radius:4px;cursor:pointer;transition:background .3s;}
-    button:hover{background:var(--sepia);}
-    footer{padding:30px;text-align:center;background:var(--sepia);color:var(--cream);font-size:0.9rem;}
-    @media(max-width:768px){
-      header h1{font-size:2.2rem}
-      .hero h2{font-size:2rem}
+
+    #tv-noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif') center center / cover no-repeat;
+      opacity: 0.2;
+    }
+
+    .overlay {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .logo-video {
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .enter-button {
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      color: #00ffcc;
+      background: transparent;
+      border: 2px solid #00ffcc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .enter-button:hover {
+      background: #00ffcc;
+      color: black;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>TrikNova Agency</h1>
-    <nav>
-      <a href="#services">Servicios</a>
-      <a href="#portfolio">Portafolio</a>
-      <a href="#contact">Contacto</a>
-    </nav>
-  </header>
+  <div id="tv-noise"></div>
 
-  <section class="hero">
-    <h2>Diseño Vintage con Toque Futurista</h2>
-    <p>Combinamos estética retro industrial y tecnología moderna para construir páginas web únicas y memorables.</p>
-    <a href="#contact" class="btn">Contáctanos</a>
-  </section>
+  <div class="overlay">
+    <!-- Sustituye la URL con tu video o animación de logo -->
+    <video class="logo-video" autoplay loop muted playsinline>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
 
-  <section id="services">
-    <h2 class="section-title">Nuestros Servicios</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon">🖥️</div>
-        <h3>Diseño Web Retro</h3>
-        <p>Interfaces inspiradas en tipografía clásica y colores cálidos.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">⚙️</div>
-        <h3>Desarrollo Moderno</h3>
-        <p>Tecnologías limpias que aseguran velocidad y rendimiento.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📈</div>
-        <h3>Estrategia Digital</h3>
-        <p>Planificación para que tu marca conquiste el mercado digital.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎨</div>
-        <h3>Branding Personalizado</h3>
-        <p>Creación de identidad visual coherente y estéticamente impactante.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio" class="portfolio">
-    <h2 class="section-title">Proyectos Recientes</h2>
-    <div class="grid">
-      <img src="https://via.placeholder.com/400x300" alt="Proyecto A">
-      <img src="https://via.placeholder.com/400x300" alt="Proyecto B">
-      <img src="https://via.placeholder.com/400x300" alt="Proyecto C">
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2 class="section-title">Contáctanos</h2>
-    <form action="#" method="POST">
-      <input type="text" placeholder="Nombre completo" required>
-      <input type="email" placeholder="Correo electrónico" required>
-      <textarea rows="5" placeholder="Cuéntanos tu proyecto" required></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </section>
-
-  <footer>
-    © 2025 TrikNova Agency – Estilo vintage y visión futurista.
-  </footer>
+    <button class="enter-button" onclick="location.href='home.html'">Entrar</button>
+  </div>
 </body>
 </html>
