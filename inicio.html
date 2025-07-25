@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio - Agencia Web</title>
+  <style>
+    /* Fondo con video */
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #eee;
+      background: #000;
+    }
+    video#background-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+    .content {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3em;
+      color: #00ffe7; /* un tono futurista/cian */
+      text-shadow: 0 0 10px #00ffe7;
+    }
+    p.lead {
+      font-size: 1.3rem;
+      margin-bottom: 2em;
+      color: #c2f0f7;
+      max-width: 700px;
+    }
+    ul.features {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+    ul.features li {
+      margin: 15px 0;
+      padding-left: 1.5em;
+      position: relative;
+    }
+    ul.features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #00ffe7;
+      font-weight: bold;
+      font-size: 1.3rem;
+      line-height: 1;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="background-video">
+    <source src="tvgif.mp4" type="video/mp4" />
+    Tu navegador no soporta la reproducción de video.
+  </video>
+
+  <div class="content">
+    <h1>Bienvenido a [Nombre de la Agencia]</h1>
+    <p class="lead">
+      Creamos sitios web modernos, funcionales y atractivos que conectan tu marca con el mundo digital.
+    </p>
+    <ul class="features">
+      <li>Diseño responsivo y adaptable a todos los dispositivos.</li>
+      <li>Optimización SEO para mejorar tu posicionamiento en buscadores.</li>
+      <li>Integración con redes sociales y herramientas de marketing.</li>
+      <li>Desarrollo de sitios rápidos y seguros con tecnologías modernas.</li>
+      <li>Creación de tiendas online y sistemas personalizados.</li>
+      <li>Mantenimiento y soporte continuo para tu proyecto digital.</li>
+      <li>Animaciones y efectos visuales para una experiencia impactante.</li>
+      <li>Consultoría en estrategia digital y transformación tecnológica.</li>
+    </ul>
+  </div>
+</body>
+</html>
