@@ -1,63 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeoWeb Agency</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEOWEB - Agencia Futurista</title>
+  <style>
+    :root {
+      --primary: #00ffe0;
+      --secondary: #0f0f1b;
+      --accent: #ff4fd8;
+      --text: #ffffff;
+      --bg: #0b0b13;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: var(--secondary);
+      box-shadow: 0 0 20px var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: var(--text);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 100px 20px;
+      color: var(--bg);
+      text-shadow: 0 0 10px #000;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .services,
+    .portfolio,
+    .contact {
+      background-color: var(--secondary);
+      border-top: 2px solid var(--primary);
+    }
+
+    .services h2,
+    .portfolio h2,
+    .contact h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .service-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: var(--glass);
+      border: 1px solid var(--primary);
+      padding: 30px;
+      border-radius: 10px;
+      width: 250px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+
+    .service-card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .portfolio img {
+      max-width: 300px;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+
+    .portfolio img:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1c1c2e;
+      color: var(--text);
+    }
+
+    button {
+      padding: 12px;
+      background-color: var(--primary);
+      color: var(--bg);
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--accent);
+    }
+
+    footer {
+      background-color: #0a0a16;
+      text-align: center;
+      padding: 30px 20px;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--primary);
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>NeoWeb Agency</h1>
-      <p>We Build the Future of the Web</p>
-      <a href="#services" class="btn">Explore Services</a>
-    </div>
+  <header>
+    <h1>NEOWEB</h1>
+    <nav>
+      <a href="#services">Servicios</a>
+      <a href="#portfolio">Portafolio</a>
+      <a href="#contact">Contacto</a>
+    </nav>
   </header>
 
-  <section id="services" class="section services">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Web Design</h3>
-        <p>Futuristic UI/UX tailored to your brand identity.</p>
+  <section class="hero">
+    <h2>Agencia de Desarrollo Web Futurista</h2>
+    <p>Transformamos ideas en experiencias digitales impactantes</p>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Servicios</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <i class="fas fa-laptop-code"></i>
+        <p>Webs ultra-rápidas</p>
       </div>
-      <div class="card">
-        <h3>Development</h3>
-        <p>From landing pages to full-stack apps using modern tech.</p>
+      <div class="service-card">
+        <i class="fas fa-paint-brush"></i>
+        <p>Diseño UX/UI moderno</p>
       </div>
-      <div class="card">
-        <h3>Branding</h3>
-        <p>Logos, style guides, and cohesive digital presence.</p>
+      <div class="service-card">
+        <i class="fas fa-rocket"></i>
+        <p>Landing pages que convierten</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-mobile-alt"></i>
+        <p>Responsive para móviles</p>
       </div>
     </div>
   </section>
 
-  <section class="section portfolio">
-    <h2>Portfolio</h2>
-    <div class="grid portfolio-grid">
-      <div class="portfolio-item">Project 1</div>
-      <div class="portfolio-item">Project 2</div>
-      <div class="portfolio-item">Project 3</div>
+  <section class="portfolio" id="portfolio">
+    <h2>Proyectos</h2>
+    <div>
+      <img src="https://via.placeholder.com/300x200" alt="Proyecto 1">
+      <img src="https://via.placeholder.com/300x200" alt="Proyecto 2">
+      <img src="https://via.placeholder.com/300x200" alt="Proyecto 3">
     </div>
   </section>
 
-  <section class="section contact">
-    <h2>Contact Us</h2>
-    <form action="#" method="POST">
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send</button>
+  <section class="contact" id="contact">
+    <h2>Contáctanos</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu email" required>
+      <textarea rows="5" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 NeoWeb Agency. All rights reserved.</p>
+    © 2025 NEOWEB. Todos los derechos reservados.
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Floating hero effect
+    const heroTitle = document.querySelector('.hero h2');
+    let offset = 0;
+    setInterval(() => {
+      offset += 0.05;
+      heroTitle.style.transform = `translateY(${Math.sin(offset) * 5}px)`;
+    }, 50);
+  </script>
+
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
