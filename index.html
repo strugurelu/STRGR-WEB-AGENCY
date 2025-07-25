@@ -1,113 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nova Digital Agency</title>
+  <title>TrikNova Web Agency</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    /* Paleta: Oceanic Serenity con acentos futuristas */
+    /* Paleta vintage‑futurista */
     :root {
-      --deep-sea: #006D77;
-      --ocean-wave: #00CED1;
-      --aqua-calm: #7FFFD4;
-      --text-light: #FFFFFF;
-      --bg-dark: #012A36;
-      --accent: #A259FF;
+      --cream: #f4eee0;
+      --sepia: #6b533a;
+      --turquoise-fut: #40e0d0;
+      --text: #1f1b18;
+      --accent: #d64161;
     }
-    *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
-    body{background-color:var(--bg-dark);color:var(--text-light);overflow-x:hidden;}
-    header{padding:40px;text-align:center;background: linear-gradient(135deg,var(--deep-sea),var(--ocean-wave));}
-    header h1{font-size:3rem;color:var(--text-light);letter-spacing:1px;}
-    nav{margin-top:20px;}
-    nav a{color:var(--text-light);margin:0 20px;text-decoration:none;font-weight:500;position:relative;}
-    nav a::after{content:"";display:block;height:2px;width:0;background:var(--accent);transition:width .3s;}
-    nav a:hover::after{width:100%;}
-    section{padding:80px 20px;text-align:center;}
-    .hero{min-height:60vh;display:flex;flex-direction:column;justify-content:center;animation:heroFade 2s ease-in-out;}
-    .hero h2{font-size:2.5rem;color:var(--aqua-calm);margin-bottom:20px;animation:float 6s infinite;}
-    .hero p{font-size:1.2rem;color:var(--text-light);max-width:600px;margin:auto;}
-    .btn{display:inline-block;margin-top:30px;padding:15px 40px;background:var(--accent);color:#fff;text-decoration:none;font-size:1.1rem;border-radius:50px;transition:transform .3s;}
-    .btn:hover{transform:scale(1.05);}
-    .services,h2{font-size:2.2rem;color:var(--ocean-wave);margin-bottom:40px;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
-    .card{background:radial-gradient(circle at top,left, var(--aqua-calm), var(--deep-sea));padding:30px;border-radius:15px;transition:transform .3s;display:flex;flex-direction:column;align-items:center;}
-    .card:hover{transform:translateY(-10px);}
-    .card i{font-size:2.2rem;color:var(--accent);margin-bottom:15px;}
-    .portfolio{background:var(--deep-sea);}
-    .portfolio img{width:100%;height:auto;border-radius:10px;border:4px solid var(--accent);transition:transform .3s;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',sans-serif;color:var(--text);background:var(--cream);}
+    header{padding:20px;text-align:center;border-bottom:3px solid var(--sepia);}
+    header h1{font-size:2.8rem;color:var(--sepia);letter-spacing:2px;font-family: 'Courier New', monospace;}
+    nav{margin-top:10px;}
+    nav a{margin:0 15px;color:var(--sepia);text-decoration:none;font-weight:bold;transition:color .3s;}
+    nav a:hover{color:var(--accent);}
+    .hero{padding:60px 20px;text-align:center;background:linear-gradient(130deg, var(--sepia), var(--turquoise-fut));color:var(--cream);}
+    .hero h2{font-size:2.5rem; font-family: 'Courier New', monospace; margin-bottom:15px;}
+    .hero p{max-width:600px;margin:auto;font-size:1.1rem;line-height:1.5;}
+    .btn{display:inline-block;margin-top:30px;padding:12px 30px;border:2px solid var(--cream);color:var(--cream);text-decoration:none;font-size:1rem;border-radius:25px;transition:background .3s,color .3s;}
+    .btn:hover{background:var(--cream);color:var(--turquoise-fut);}
+    section{padding:60px 20px;}
+    h2.section-title{font-size:2rem;color:var(--sepia);margin-bottom:40px;text-align:center;font-family: sans-serif;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;}
+    .card{background:rgba(255,255,255,0.8);padding:30px;border-radius:10px;transition:transform .3s;}
+    .card:hover{transform:translateY(-8px);}
+    .card-icon{font-size:2.3rem;color:var(--turquoise-fut);margin-bottom:15px;}
+    .portfolio{background:var(--cream);}
+    .portfolio img{width:100%;border:4px solid var(--sepia);border-radius:8px;transition:transform .3s;}
     .portfolio img:hover{transform:scale(1.05);}
     .contact form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;}
-    input,textarea{padding:12px;border:none;border-radius:5px;background:#013d4a;color:var(--text-light);}
-    button{padding:15px;background:var(--accent);color:#fff;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:background .3s;}
-    button:hover{background:var(--aqua-calm);}
-    footer{padding:30px;background:var(--deep-sea);color:#bbb;font-size:0.9rem;margin-top:60px;}
-    @keyframes heroFade {0%{opacity:0}100%{opacity:1}}
-    @keyframes float {0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    @media(max-width:768px){header h1{font-size:2.2rem}.hero h2{font-size:2rem}}
+    input,textarea{padding:12px;border:1px solid var(--sepia);border-radius:4px;background:#fff;color:var(--text);}
+    button{padding:14px;background:var(--accent);color:#fff;border:none;border-radius:4px;cursor:pointer;transition:background .3s;}
+    button:hover{background:var(--sepia);}
+    footer{padding:30px;text-align:center;background:var(--sepia);color:var(--cream);font-size:0.9rem;}
+    @media(max-width:768px){
+      header h1{font-size:2.2rem}
+      .hero h2{font-size:2rem}
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>TrikNova Agency</h1>
+    <nav>
+      <a href="#services">Servicios</a>
+      <a href="#portfolio">Portafolio</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Nova Digital Agency</h1>
-  <nav>
-    <a href="#services">Servicios</a>
-    <a href="#portfolio">Portafolio</a>
-    <a href="#contact">Contacto</a>
-  </nav>
-</header>
+  <section class="hero">
+    <h2>Diseño Vintage con Toque Futurista</h2>
+    <p>Combinamos estética retro industrial y tecnología moderna para construir páginas web únicas y memorables.</p>
+    <a href="#contact" class="btn">Contáctanos</a>
+  </section>
 
-<section class="hero">
-  <h2>Diseñamos el futuro digital</h2>
-  <p>Combinamos creatividad, tecnología y estrategia para crear experiencias web únicas e impactantes.</p>
-  <a href="#contact" class="btn">Trabajemos juntos</a>
-</section>
+  <section id="services">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">🖥️</div>
+        <h3>Diseño Web Retro</h3>
+        <p>Interfaces inspiradas en tipografía clásica y colores cálidos.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>Desarrollo Moderno</h3>
+        <p>Tecnologías limpias que aseguran velocidad y rendimiento.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Estrategia Digital</h3>
+        <p>Planificación para que tu marca conquiste el mercado digital.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>Branding Personalizado</h3>
+        <p>Creación de identidad visual coherente y estéticamente impactante.</p>
+      </div>
+    </div>
+  </section>
 
-<section class="services" id="services">
-  <h2>Qué Hacemos</h2>
-  <div class="grid">
-    <div class="card"><i class="fas fa-laptop-code"></i><h3>Desarrollo Web</h3></div>
-    <div class="card"><i class="fas fa-paint-brush"></i><h3>Diseño UX/UI</h3></div>
-    <div class="card"><i class="fas fa-rocket"></i><h3>Estrategia Digital</h3></div>
-    <div class="card"><i class="fas fa-chart-line"></i><h3>SEO & Analítica</h3></div>
-  </div>
-</section>
+  <section id="portfolio" class="portfolio">
+    <h2 class="section-title">Proyectos Recientes</h2>
+    <div class="grid">
+      <img src="https://via.placeholder.com/400x300" alt="Proyecto A">
+      <img src="https://via.placeholder.com/400x300" alt="Proyecto B">
+      <img src="https://via.placeholder.com/400x300" alt="Proyecto C">
+    </div>
+  </section>
 
-<section class="portfolio" id="portfolio">
-  <h2>Proyectos</h2>
-  <div class="grid">
-    <img src="https://via.placeholder.com/400x300" alt="Proyecto 1">
-    <img src="https://via.placeholder.com/400x300" alt="Proyecto 2">
-    <img src="https://via.placeholder.com/400x300" alt="Proyecto 3">
-  </div>
-</section>
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contáctanos</h2>
+    <form action="#" method="POST">
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea rows="5" placeholder="Cuéntanos tu proyecto" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </section>
 
-<section class="contact" id="contact">
-  <h2>Contáctanos</h2>
-  <form>
-    <input type="text" placeholder="Nombre completo" required>
-    <input type="email" placeholder="Correo electrónico" required>
-    <textarea rows="5" placeholder="Cuéntanos tu proyecto" required></textarea>
-    <button type="submit">Enviar mensaje</button>
-  </form>
-</section>
-
-<footer>
-  © 2025 Nova Digital Agency. Todos los derechos reservados.
-</footer>
-
-<!-- Scripts -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<script>
-  // Desplazamiento suave navegación
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelector(link.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
-    });
-  });
-</script>
-
+  <footer>
+    © 2025 TrikNova Agency – Estilo vintage y visión futurista.
+  </footer>
 </body>
 </html>
