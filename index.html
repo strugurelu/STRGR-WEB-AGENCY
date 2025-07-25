@@ -1,93 +1,81 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agencia Web Futurista</title>
+  <title>Sin señal - Agencia Web</title>
   <style>
+    /* Reset y estilos básicos */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html, body {
       height: 100%;
-      width: 100%;
-      overflow: hidden;
-      font-family: 'Courier New', Courier, monospace;
-      background: #000;
-      color: #000;
+      background: black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      position: relative;
+      align-items: center;
+      flex-direction: column;
+      color: #000;
     }
-
-    /* VIDEO fondo */
+    /* Video fondo (el gif está en mp4) */
     #background-video {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
       width: 100vw;
       height: 100vh;
       object-fit: cover;
+      transform: translate(-50%, -50%);
       z-index: -1;
-      filter: brightness(0.15);
-      pointer-events: none;
+      filter: none;
     }
-
-    /* Video logo sin borde ni sombra */
-    #intro-video {
+    /* Contenedor del contenido */
+    .container {
+      text-align: center;
+      margin-top: 5vh;
+    }
+    /* Video logo sin bordes */
+    #logo-video {
       width: 300px;
-      max-width: 80vw;
-      border: none;
-      border-radius: 0;
-      margin-bottom: 30px;
+      height: auto;
       display: block;
-      z-index: 1;
-      position: relative;
+      margin: 0 auto 20px auto;
     }
-
     /* Botón blanco y negro */
-    .enter-btn {
+    .btn-enter {
       background-color: #fff;
       color: #000;
       border: none;
-      padding: 12px 28px;
-      font-size: 18px;
-      border-radius: 8px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      padding: 15px 40px;
+      font-size: 1.2rem;
       font-weight: bold;
-      box-shadow: 0 0 5px #000;
-      position: relative;
-      z-index: 1;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 4px;
     }
-
-    .enter-btn:hover {
+    .btn-enter:hover {
       background-color: #000;
       color: #fff;
-      box-shadow: 0 0 10px #fff;
     }
   </style>
 </head>
 <body>
-
-  <!-- Video de fondo -->
+  <!-- Video gif fondo -->
   <video autoplay muted loop playsinline id="background-video" src="tvgif.mp4"></video>
 
-  <!-- Video logo -->
-  <video autoplay muted loop playsinline id="intro-video">
-    <source src="logo.mp4" type="video/mp4" />
-    Il tuo browser non supporta il video HTML5.
-  </video>
+  <div class="container">
+    <!-- Video logo -->
+    <video autoplay muted loop playsinline id="logo-video">
+      <source src="logo.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
 
-  <!-- Botón -->
-  <button class="enter-btn" onclick="window.location.href='home.html'">ENTRAR</button>
-
+    <!-- Botón entrar -->
+    <button class="btn-enter" onclick="location.href='#'">Entrar</button>
+  </div>
 </body>
 </html>
