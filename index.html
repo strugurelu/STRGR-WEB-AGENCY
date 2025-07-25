@@ -2,63 +2,56 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Agencia Web Futurista</title>
   <style>
-    /* GLOBAL STYLES */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      background: #000;
-      color: #fff;
-      font-family: 'Courier New', Courier, monospace;
+    html, body {
+      height: 100%;
+      width: 100%;
       overflow: hidden;
-      height: 100vh;
-      width: 100vw;
+      font-family: 'Courier New', Courier, monospace;
+      background: #000;
+      color: #000;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+      position: relative;
     }
 
-    /* STATIC BACKGROUND SIMULATION */
-    body::before {
-      content: '';
+    /* GIF fondo: poner detrás de todo */
+    .background-gif {
       position: fixed;
       top: 0;
       left: 0;
-      height: 100vh;
       width: 100vw;
-      background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif') center center / cover no-repeat;
+      height: 100vh;
       z-index: -1;
-      opacity: 0.15;
-      animation: flicker 0.3s infinite alternate;
+      pointer-events: none;
     }
 
-    @keyframes flicker {
-      0% { opacity: 0.13; }
-      100% { opacity: 0.18; }
-    }
-
-    /* VIDEO STYLES */
+    /* Video sin borde ni sombra */
     #intro-video {
       width: 300px;
       max-width: 80vw;
-      border: 3px solid #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00ffff;
+      border: none;
+      border-radius: 0;
       margin-bottom: 30px;
+      display: block;
     }
 
-    /* ENTER BUTTON */
+    /* Botón blanco y negro */
     .enter-btn {
-      background-color: transparent;
-      color: #00ffff;
-      border: 2px solid #00ffff;
+      background-color: #fff;
+      color: #000;
+      border: none;
       padding: 12px 28px;
       font-size: 18px;
       border-radius: 8px;
@@ -66,22 +59,34 @@
       letter-spacing: 2px;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 0 5px #000;
     }
 
     .enter-btn:hover {
-      background-color: #00ffff;
-      color: #000;
-      box-shadow: 0 0 10px #00ffff;
+      background-color: #000;
+      color: #fff;
+      box-shadow: 0 0 10px #fff;
     }
   </style>
 </head>
 <body>
 
+  <!-- GIF Fondo -->
+  <div class="background-gif">
+    <div class="tenor-gif-embed" data-postid="11312357" data-share-method="host" data-aspect-ratio="1.33333" data-width="100%">
+      <a href="https://tenor.com/view/static-glitch-gif-11312357">Static Glitch GIF</a> from <a href="https://tenor.com/search/static-gifs">Static GIFs</a>
+    </div>
+  </div>
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+  <!-- Video -->
   <video autoplay muted loop playsinline id="intro-video">
     <source src="logo.mp4" type="video/mp4" />
     Il tuo browser non supporta il video HTML5.
   </video>
 
+  <!-- Botón -->
   <button class="enter-btn" onclick="window.location.href='home.html'">ENTRAR</button>
 
 </body>
