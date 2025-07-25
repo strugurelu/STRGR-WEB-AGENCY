@@ -3,257 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NEOWEB - Agencia Futurista</title>
+  <title>Nova Digital Agency</title>
   <style>
+    /* Paleta: Oceanic Serenity con acentos futuristas */
     :root {
-      --primary: #00ffe0;
-      --secondary: #0f0f1b;
-      --accent: #ff4fd8;
-      --text: #ffffff;
-      --bg: #0b0b13;
-      --glass: rgba(255, 255, 255, 0.05);
+      --deep-sea: #006D77;
+      --ocean-wave: #00CED1;
+      --aqua-calm: #7FFFD4;
+      --text-light: #FFFFFF;
+      --bg-dark: #012A36;
+      --accent: #A259FF;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    header {
-      padding: 20px;
-      text-align: center;
-      background-color: var(--secondary);
-      box-shadow: 0 0 20px var(--primary);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--primary);
-    }
-
-    nav {
-      margin-top: 15px;
-    }
-
-    nav a {
-      color: var(--text);
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      padding: 100px 20px;
-      color: var(--bg);
-      text-shadow: 0 0 10px #000;
-    }
-
-    .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-    }
-
-    .services,
-    .portfolio,
-    .contact {
-      background-color: var(--secondary);
-      border-top: 2px solid var(--primary);
-    }
-
-    .services h2,
-    .portfolio h2,
-    .contact h2 {
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
-
-    .service-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .service-card {
-      background-color: var(--glass);
-      border: 1px solid var(--primary);
-      padding: 30px;
-      border-radius: 10px;
-      width: 250px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s;
-    }
-
-    .service-card:hover {
-      transform: scale(1.05);
-    }
-
-    .service-card i {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-
-    .portfolio img {
-      max-width: 300px;
-      border: 2px solid var(--primary);
-      border-radius: 10px;
-      margin: 10px;
-      transition: transform 0.3s;
-    }
-
-    .portfolio img:hover {
-      transform: scale(1.05);
-    }
-
-    form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #1c1c2e;
-      color: var(--text);
-    }
-
-    button {
-      padding: 12px;
-      background-color: var(--primary);
-      color: var(--bg);
-      border: none;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: var(--accent);
-    }
-
-    footer {
-      background-color: #0a0a16;
-      text-align: center;
-      padding: 30px 20px;
-      color: #888;
-      font-size: 0.9rem;
-      border-top: 1px solid var(--primary);
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+    body{background-color:var(--bg-dark);color:var(--text-light);overflow-x:hidden;}
+    header{padding:40px;text-align:center;background: linear-gradient(135deg,var(--deep-sea),var(--ocean-wave));}
+    header h1{font-size:3rem;color:var(--text-light);letter-spacing:1px;}
+    nav{margin-top:20px;}
+    nav a{color:var(--text-light);margin:0 20px;text-decoration:none;font-weight:500;position:relative;}
+    nav a::after{content:"";display:block;height:2px;width:0;background:var(--accent);transition:width .3s;}
+    nav a:hover::after{width:100%;}
+    section{padding:80px 20px;text-align:center;}
+    .hero{min-height:60vh;display:flex;flex-direction:column;justify-content:center;animation:heroFade 2s ease-in-out;}
+    .hero h2{font-size:2.5rem;color:var(--aqua-calm);margin-bottom:20px;animation:float 6s infinite;}
+    .hero p{font-size:1.2rem;color:var(--text-light);max-width:600px;margin:auto;}
+    .btn{display:inline-block;margin-top:30px;padding:15px 40px;background:var(--accent);color:#fff;text-decoration:none;font-size:1.1rem;border-radius:50px;transition:transform .3s;}
+    .btn:hover{transform:scale(1.05);}
+    .services,h2{font-size:2.2rem;color:var(--ocean-wave);margin-bottom:40px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+    .card{background:radial-gradient(circle at top,left, var(--aqua-calm), var(--deep-sea));padding:30px;border-radius:15px;transition:transform .3s;display:flex;flex-direction:column;align-items:center;}
+    .card:hover{transform:translateY(-10px);}
+    .card i{font-size:2.2rem;color:var(--accent);margin-bottom:15px;}
+    .portfolio{background:var(--deep-sea);}
+    .portfolio img{width:100%;height:auto;border-radius:10px;border:4px solid var(--accent);transition:transform .3s;}
+    .portfolio img:hover{transform:scale(1.05);}
+    .contact form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+    input,textarea{padding:12px;border:none;border-radius:5px;background:#013d4a;color:var(--text-light);}
+    button{padding:15px;background:var(--accent);color:#fff;border:none;border-radius:30px;font-size:1rem;cursor:pointer;transition:background .3s;}
+    button:hover{background:var(--aqua-calm);}
+    footer{padding:30px;background:var(--deep-sea);color:#bbb;font-size:0.9rem;margin-top:60px;}
+    @keyframes heroFade {0%{opacity:0}100%{opacity:1}}
+    @keyframes float {0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @media(max-width:768px){header h1{font-size:2.2rem}.hero h2{font-size:2rem}}
   </style>
 </head>
 <body>
-  <header>
-    <h1>NEOWEB</h1>
-    <nav>
-      <a href="#services">Servicios</a>
-      <a href="#portfolio">Portafolio</a>
-      <a href="#contact">Contacto</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Agencia de Desarrollo Web Futurista</h2>
-    <p>Transformamos ideas en experiencias digitales impactantes</p>
-  </section>
+<header>
+  <h1>Nova Digital Agency</h1>
+  <nav>
+    <a href="#services">Servicios</a>
+    <a href="#portfolio">Portafolio</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
 
-  <section class="services" id="services">
-    <h2>Servicios</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <i class="fas fa-laptop-code"></i>
-        <p>Webs ultra-rápidas</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-paint-brush"></i>
-        <p>Diseño UX/UI moderno</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-rocket"></i>
-        <p>Landing pages que convierten</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-mobile-alt"></i>
-        <p>Responsive para móviles</p>
-      </div>
-    </div>
-  </section>
+<section class="hero">
+  <h2>Diseñamos el futuro digital</h2>
+  <p>Combinamos creatividad, tecnología y estrategia para crear experiencias web únicas e impactantes.</p>
+  <a href="#contact" class="btn">Trabajemos juntos</a>
+</section>
 
-  <section class="portfolio" id="portfolio">
-    <h2>Proyectos</h2>
-    <div>
-      <img src="https://via.placeholder.com/300x200" alt="Proyecto 1">
-      <img src="https://via.placeholder.com/300x200" alt="Proyecto 2">
-      <img src="https://via.placeholder.com/300x200" alt="Proyecto 3">
-    </div>
-  </section>
+<section class="services" id="services">
+  <h2>Qué Hacemos</h2>
+  <div class="grid">
+    <div class="card"><i class="fas fa-laptop-code"></i><h3>Desarrollo Web</h3></div>
+    <div class="card"><i class="fas fa-paint-brush"></i><h3>Diseño UX/UI</h3></div>
+    <div class="card"><i class="fas fa-rocket"></i><h3>Estrategia Digital</h3></div>
+    <div class="card"><i class="fas fa-chart-line"></i><h3>SEO & Analítica</h3></div>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <h2>Contáctanos</h2>
-    <form>
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu email" required>
-      <textarea rows="5" placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+<section class="portfolio" id="portfolio">
+  <h2>Proyectos</h2>
+  <div class="grid">
+    <img src="https://via.placeholder.com/400x300" alt="Proyecto 1">
+    <img src="https://via.placeholder.com/400x300" alt="Proyecto 2">
+    <img src="https://via.placeholder.com/400x300" alt="Proyecto 3">
+  </div>
+</section>
 
-  <footer>
-    © 2025 NEOWEB. Todos los derechos reservados.
-  </footer>
+<section class="contact" id="contact">
+  <h2>Contáctanos</h2>
+  <form>
+    <input type="text" placeholder="Nombre completo" required>
+    <input type="email" placeholder="Correo electrónico" required>
+    <textarea rows="5" placeholder="Cuéntanos tu proyecto" required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</section>
 
-  <script>
-    // Smooth scroll
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-      });
+<footer>
+  © 2025 Nova Digital Agency. Todos los derechos reservados.
+</footer>
+
+<!-- Scripts -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script>
+  // Desplazamiento suave navegación
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(link.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
     });
+  });
+</script>
 
-    // Floating hero effect
-    const heroTitle = document.querySelector('.hero h2');
-    let offset = 0;
-    setInterval(() => {
-      offset += 0.05;
-      heroTitle.style.transform = `translateY(${Math.sin(offset) * 5}px)`;
-    }, 50);
-  </script>
-
-  <!-- FontAwesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
