@@ -3,79 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sin señal - Agencia Web</title>
+  <title>Señal Perdida - Agencia Web</title>
   <style>
-    /* Reset y estilos básicos */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html, body {
       height: 100%;
+      width: 100%;
+      overflow: hidden;
       background: black;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      color: #000;
     }
-    /* Video fondo (el gif está en mp4) */
+
     #background-video {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 100vw;
-      height: 100vh;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      transform: translate(-50%, -50%);
       z-index: -1;
-      filter: none;
     }
-    /* Contenedor del contenido */
-    .container {
+
+    header {
+      margin-bottom: 20px;
       text-align: center;
-      margin-top: 5vh;
     }
-    /* Video logo sin bordes */
-    #logo-video {
+
+    header video {
       width: 300px;
       height: auto;
       display: block;
-      margin: 0 auto 20px auto;
+      margin: 0 auto;
     }
-    /* Botón blanco y negro */
+
     .btn-enter {
-      background-color: #fff;
-      color: #000;
-      border: none;
-      padding: 15px 40px;
-      font-size: 1.2rem;
+      padding: 15px 50px;
+      border: 2px solid white;
+      background-color: white;
+      color: black;
       font-weight: bold;
+      font-size: 1.2rem;
       cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 5px;
+      user-select: none;
     }
+
     .btn-enter:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: black;
+      color: white;
+      border-color: white;
     }
   </style>
 </head>
 <body>
-  <!-- Video gif fondo -->
-  <video autoplay muted loop playsinline id="background-video" src="tvgif.mp4"></video>
+  <video id="background-video" autoplay muted loop playsinline>
+    <source src="tvgif.mp4" type="video/mp4" />
+    Tu navegador no soporta video HTML5.
+  </video>
 
-  <div class="container">
-    <!-- Video logo -->
-    <video autoplay muted loop playsinline id="logo-video">
+  <header>
+    <video autoplay muted loop playsinline>
       <source src="logo.mp4" type="video/mp4" />
-      Tu navegador no soporta el video.
+      Tu navegador no soporta video HTML5.
     </video>
+  </header>
 
-    <!-- Botón entrar -->
-    <button class="btn-enter" onclick="location.href='#'">Entrar</button>
-  </div>
+  <button class="btn-enter" onclick="entrar()">Entrar</button>
+
+  <script>
+    function entrar() {
+      alert('Entrando a la web...');
+      // Aquí puedes agregar la redirección o funcionalidad que necesites
+      // window.location.href = 'home.html';
+    }
+  </script>
 </body>
 </html>
