@@ -5,67 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Agencia Futurista: estudio creativo digital que ofrece experiencias audiovisuales de vanguardia, combinando innovación y diseño para impulsar tu marca." />
   <title>Agencia Futurista</title>
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="xbaTgrqQp-INomanLMtmA7H3jslOZ24FAF-5i652AaE" />
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2650658270877925" crossorigin="anonymous"></script>
   <style>
-    * {
-      margin: 0; padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      background-color: black;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    html, body { height: 100%; overflow: hidden; background-color: black; }
     /* VIDEO DE FONDO */
-    #background {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
+    #background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
     /* LOGO EN VIDEO */
-    .logo-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      position: relative;
-      z-index: 2;
-    }
-
-    .logo-container video {
-      width: 300px;
-      max-width: 90%;
-    }
-
-    .enter-button {
-      margin-top: 30px;
-      background-color: white;
-      color: black;
-      border: none;
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .enter-button:hover {
-      background-color: black;
-      color: white;
-      border: 2px solid white;
-    }
+    .logo-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; position: relative; z-index: 2; }
+    .logo-container video { width: 300px; max-width: 90%; }
+    .enter-button { margin-top: 30px; background-color: white; color: black; border: none; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; }
+    .enter-button:hover { background-color: black; color: white; border: 2px solid white; }
+    /* Estilos para anuncios laterales */
+    .ad-side { position: fixed; top: 50%; transform: translateY(-50%); width: 120px; z-index: 1000; }
+    .ad-left { left: 0; }
+    .ad-right { right: 0; }
+    @media (max-width: 768px) { .ad-side { display: none; } }
   </style>
 </head>
 <body>
-  <!-- FONDO CON TVGIF -->
+  <!-- Anuncio Izquierdo -->
+  <ins class="adsbygoogle ad-side ad-left"
+       style="display:block"
+       data-ad-client="ca-pub-2650658270877925"
+       data-ad-slot="LEFT_SLOT_ID"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- FONDO CON VIDEO GIF -->
   <video autoplay muted loop playsinline id="background">
     <source src="tvgif.mp4" type="video/mp4" />
     Tu navegador no soporta video HTML5.
@@ -81,5 +52,14 @@
       <button class="enter-button">Entrar</button>
     </a>
   </div>
+
+  <!-- Anuncio Derecho -->
+  <ins class="adsbygoogle ad-side ad-right"
+       style="display:block"
+       data-ad-client="ca-pub-2650658270877925"
+       data-ad-slot="RIGHT_SLOT_ID"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </body>
 </html>
